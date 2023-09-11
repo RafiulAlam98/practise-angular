@@ -53,4 +53,11 @@ export class CoursesComponent {
     return this.courses.filter((course) => course.courseType === 'Premium')
       .length;
   }
+
+  selectedCourses: string = 'all';
+
+  onchangeSelectedCourse(data: string) {
+    this.selectedCourses = data;
+    console.log(this.selectedCourses);
+  }
 }

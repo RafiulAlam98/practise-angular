@@ -1,9 +1,12 @@
 <div>
   <p>Please select your favorite courses:</p>
-    <input type="radio" id="free" name="fav_language" value="free">
+  <input type="radio" id="free" name="fav_language" value="Free" [(ngModel)]="selectedRadioButton"
+    (change)="onRadioButtonSelectionChanged()">
     <label for="free">Free {{free}}</label><br>
-    <input type="radio" id="premium" name="fav_language" value="premium">
+  <input type="radio" id="premium" name="fav_language" value="Premium" [(ngModel)]="selectedRadioButton"
+    (change)="onRadioButtonSelectionChanged()">
     <label for="premium">premium {{premium}}</label><br>
-    <input type="radio" id="all" name="fav_language" value="all">
+  <input type="radio" id="all" name="fav_language" value="all" [(ngModel)]="selectedRadioButton"
+    (change)="onRadioButtonSelectionChanged()">
     <label for="all">all {{all}}</label>
 </div>
