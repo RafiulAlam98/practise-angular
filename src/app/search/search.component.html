@@ -1,5 +1,4 @@
 <div>
   <!-- <input type="text" (input)="changeSearchValue($event)" /> -->
-  <input type="text" [(ngModel)]="searchValue" />
-  <span *ngIf="searchValue != ''  ">you search for {{searchValue}}</span>
+  <input type="text" [(ngModel)]="searchValue" (input)="onChnageSearchText()" />
 </div>

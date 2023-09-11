@@ -54,6 +54,13 @@ export class CoursesComponent {
       .length;
   }
 
+  searchValue: string = '';
+
+  onSearchText(data: string) {
+    this.searchValue = data;
+    console.log(this.searchValue);
+  }
+
   selectedCourses: string = 'all';
 
   onchangeSelectedCourse(data: string) {

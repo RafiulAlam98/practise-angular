@@ -1,10 +1,10 @@
 <div class="max-w-[1000px] mx-auto mt-5">
-
+<app-search (searchChangeEvent)="onSearchText($event)"></app-search>
   <app-filter [all]="getAllCourses()" [free]="getFreeCourses()" [premium]="getPremiumCourses()"
     (filterRadioButtonSelectionChanged)="onchangeSelectedCourse($event)"></app-filter>
   <div class="grid grid-cols-4 gap-4 ">
     <ng-container *ngFor="let course of courses">
-      <div *ngIf="selectedCourses === 'all' || selectedCourses === course.courseType">
+      <div *ngIf=" course.courseName.toLowerCase().includes(searchValue)">
       <div className="card  bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{{course.courseName}}</h2>
