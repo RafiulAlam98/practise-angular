@@ -1,24 +1,16 @@
-<!-- <div *ngFor="let item of [1,2,3,4,5,7,4,6]">
-  <p>Number is: {{item}}</p>
-</div> -->
-
-<div *ngFor="let p of products let i = index" class="max-w-[1000px] mx-auto">
-  <div class="grid lg:grid-cols-2 gap-4 mt-5">
-    <div className="card bg-primary text-primary-content">
-      <div className="card-body">
-        <h2 className="card-title">{{p.name}}</h2>
+<div class="products-container">
+  <div class="card" *ngFor="let p of products let i = index">
+    <h2 class="">{{p.name}}</h2>
         <p>{{p.description}}</p>
         <p [ngStyle]="{color: p.price <= 20 ? 'Green' :'Red'}">{{p.price}}</p>
         <p>{{p.category}}</p>
-        <div className="card-actions justify-end">
-          <button *ngIf="p.availability === 'Available' ; else notifyMe" className="btn">Buy Now</button>
+        <div class="card-actions justify-end">
+          <button *ngIf="p.availability === 'Available' ; else notifyMe" class="btn">Buy Now</button>
 
           <ng-template #notifyMe>
-            <button className="btn">Notify Me</button>
+            <button class="btn">Notify Me</button>
           </ng-template>
         </div>
-      </div>
-    </div>
-  </div>
-
+        <button routerLink="product-details/{{p.id}}">Show Details</button>
+</div>
 </div>
